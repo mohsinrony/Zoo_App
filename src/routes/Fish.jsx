@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import Header from '../components/Header';
-import {fishes} from './assets/FishList'
-import Card from './Card.jsx'
+import {fishes} from '../assets/FishList'
+import Card from '../components/Card';
 
 function Fish () {
   const [fishList, setFishList] = useState(fishes);

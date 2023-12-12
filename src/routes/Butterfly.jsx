@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import Header from '../components/Header';
-import {butterflies} from './assets/ButterflyList'
-import Card from './Card.jsx'
+import {butterflies} from '../assets/ButterfyList';
+import Card from '../components/Card';
 
 function Butterfly () {
   const [butterflyList, setButterflyList] = useState(butterflies);
  
   const removeCard = (name) => {
-    setBirdList((prevButterflies) => prevButterflies.filter((butterflies) => butterflies.name !== name));
+    setButterflyList((prevButterflies) => prevButterflies.filter((butterflies) => butterflies.name !== name));
   };
   return (
     <>

@@ -8,5 +8,5 @@ return (
  <Link to ="/">Home</Link>
     </>
 )
-}
+};
 export default Home;

@@ -1,37 +1,41 @@
 import { useState } from 'react';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./routes/Home.jsx";
+import About from "./routes/About.jsx";
+import Animals from "./routes/Animals.jsx";
+import Birds from "./routes/Birds.jsx";
+import Fish from "./routes/Fish.jsx";
+import Butterfly from "./routes/Butterfly.jsx"; 
+import Root from "./routes/Root.jsx";
 import './styles/App.css'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import Card from './components/Card.jsx'
-import {animals} from './assets/AnimalList'
-import {birds} from './assets/BirdsList'
+
 
 
 function App() {
-  const [animalList, setAnimalList] = useState(animals);
-  const [birdList, setBirdList] = useState(birds);
- 
-  const removeCard = (name) => {
-    setAnimalList((prevAnimals) => prevAnimals.filter((animals) => animals.name !== name));
+  const router = createBrowserRouter([
+   
+     {
+       path: "/",
+       element: <Root />,
+      
+       children: [
+         { path: "/", element: <Home /> },
+         { path: "/about", element: <About /> },
+         {path: "/animals", element: <Animals/>},
+          {path: "/birds", element: <Birds/>},
+             {path: "/fishes", element: <Fish/>},
+             {path: "/butterflies", element: <Butterfly/>},
+       ],
+     },
+   ]);
 
-  };
+ 
   return (
     <>
-      <Header/>
-      <main>
-        
-      <h3>There are {animals.length} Animals in the Zoo! </h3>
-    
-      {animals.map((animal) => (<Card key={animal.name} {...animal}  removeCard={removeCard} 
-      
-     />))}
-      {birds.map((bird) => (<Card key={bird.name}{...bird}/>))}
-      </main>
-      
-         <Footer footer="Mohsin Rony 2023"/>
+     <RouterProvider router={router} />
    </>
   )
-}
+};
 
 export default App;
 

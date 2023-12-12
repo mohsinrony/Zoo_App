@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import Header from '../components/Header';
-import {birds} from './assets/BirdsList'
-import Card from './Card.jsx'
+import {birds} from '../assets/BirdsList'
+import Card from '../components/Card';
 
 function Birds () {
   const [birdList, setBirdList] = useState(birds);

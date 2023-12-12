@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import Header from '../components/Header';
-import {animals} from './assets/AnimalList'
-import Card from './Card.jsx'
+import {animals} from '../assets/AnimalList'
+import Card from '../components/Card';
 
 function Animals() {
   const [animalList, setAnimalList] = useState(animals);
