@@ -30,6 +30,12 @@ body {
   text-align: center;
   
 }
+.broken-heart {
+  display: inline-block;
+  background-size: 20px;
+  padding-left:20px;
+}
+
 
 .card img{
   width:100%;

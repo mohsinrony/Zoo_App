@@ -4,24 +4,28 @@ import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import Card from './Card.jsx'
 import {animals} from './AnimalList'
+import {birds} from './BirdsList'
 
 
 function App() {
   const [animalList, setAnimalList] = useState(animals);
+  const [birdList, setBirdList] = useState(birds);
  
-  const handleRemove = (name) => {
+  const removeCard = (name) => {
     setAnimalList((prevAnimals) => prevAnimals.filter((animal) => animal.name !== name));
+
   };
   return (
     <>
-      <Header logo="Mohsin Rony"/>
+      <Header/>
       <main>
         
-      {/* <h1>Animals({animals.length})</h1> */}
+      <h3>There are {animals.length} Animals in the Zoo! </h3>
     
-      {animals.map((animal) => (<Card key={animal.name} {...animal} onRemove={handleRemove} 
-     />))}
+      {animals.map((animal) => (<Card key={animal.name} {...animal}  removeCard={removeCard} 
       
+     />))}
+      {birds.map((bird) => (<Card key={bird.name}{...bird}/>))}
       </main>
       
          <Footer footer="Mohsin Rony 2023"/>
