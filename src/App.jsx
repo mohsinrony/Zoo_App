@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './styles/App.css'
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
-import Card from './Card.jsx'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import Card from './components/Card.jsx'
 import {animals} from './assets/AnimalList'
 import {birds} from './assets/BirdsList'
 
@@ -12,7 +12,7 @@ function App() {
   const [birdList, setBirdList] = useState(birds);
  
   const removeCard = (name) => {
-    setAnimalList((prevAnimals) => prevAnimals.filter((animal) => animal.name !== name));
+    setAnimalList((prevAnimals) => prevAnimals.filter((animals) => animals.name !== name));
 
   };
   return (

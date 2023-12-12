@@ -1,4 +1,4 @@
-export const fish = [
+export const fishes = [
   { "name": "Angelfish", "likes": 0 },
   { "name": "Betta", "likes": 0 },
   { "name": "Clownfish", "likes": 0 },
