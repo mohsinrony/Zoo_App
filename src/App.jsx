@@ -19,8 +19,8 @@ function App() {
        element: <Root />,
       
        children: [
-         { path: "/", element: <Home /> },
-         { path: "/about", element: <About /> },
+         { path: "/home", element: <Home/> },
+         { path: "/about", element: <About/> },
          {path: "/animals", element: <Animals/>},
           {path: "/birds", element: <Birds/>},
              {path: "/fishes", element: <Fish/>},
