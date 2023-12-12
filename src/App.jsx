@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import './App.css'
+import './styles/App.css'
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import Card from './Card.jsx'
-import {animals} from './AnimalList'
-import {birds} from './BirdsList'
+import {animals} from './assets/AnimalList'
+import {birds} from './assets/BirdsList'
 
 
 function App() {
