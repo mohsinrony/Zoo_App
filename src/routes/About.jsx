@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/About.css';
 
 const About = () => {
@@ -13,12 +14,12 @@ const About = () => {
           <h2>Features Implemented:</h2>
           <ul>
             
-            <li>Home Page with links to Animals, Birds, Fishes and Butterfly pages.</li>
-            <li>About Page providing information about the project.</li>
-            <li>Animals Page listing all animals with a search feature.</li>
-            <li>Birds Page listing all birds with a search feature.</li>
-            <li>Fishes Page listing all fishes with a search feature.</li>
-            <li>Butterflies Page listing all butterflies with a search feature.</li>
+            <li><Link to="/">Home </Link>Page with links to Animals, Birds, Fishes and Butterfly pages.</li>
+            <li><Link to="/about">About </Link> Page providing information about the project.</li>
+            <li><Link to="/animals">Animals </Link> Page listing all animals with a search feature.</li>
+            <li><Link to="/birds">Birds</Link> Page listing all birds with a search feature.</li>
+            <li><Link to="/fishes">Fishes </Link> Page listing all fishes with a search feature.</li>
+            <li><Link to="/butterflies">Butterflies </Link> Page listing all butterflies with a search feature.</li>
             
           </ul>
         </div>
