@@ -22,7 +22,7 @@ const Card = (props, removeCard) => {
   return (
     <div className="cards">
     <div className="card">
-       <button onClick={handleRemoveClick}><span className="material-symbols-outlined cancel-icon">
+       <button className='removeButton' onClick= {handleRemoveClick}><span className="material-symbols-outlined cancel-icon">
 cancel
 </span></button>
       <img src={imgUrl} alt={props.name} />
@@ -51,5 +51,3 @@ heart_plus
 
   
   export default Card;
-
-
