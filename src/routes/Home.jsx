@@ -5,8 +5,9 @@ import '../styles/Home.css';
 const Home = () => {
   return (
     <div className='home-container'>
+        <h2>Welcome to the Zoo</h2>
         <div className='home-content'>
-      <h2>Welcome to the Zoo</h2>
+      
       <Link to="/animals">
         <img src="./src/assets/animals.jpg" alt="Animals Page" />
       </Link>
