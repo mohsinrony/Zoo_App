@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import Home from "./routes/Home.jsx";
 import About from "./routes/About.jsx";
 import Animals from "./routes/Animals.jsx";
@@ -16,15 +15,16 @@ function App() {
    
      {
        path: "/",
-       element: <Root />,
+       element: 
+       <Root/>,
       
        children: [
-         { path: "/home", element: <Home/> },
-         { path: "/about", element: <About/> },
-         {path: "/animals", element: <Animals/>},
-          {path: "/birds", element: <Birds/>},
-             {path: "/fishes", element: <Fish/>},
-             {path: "/butterflies", element: <Butterfly/>},
+        {path: "/", element: <Home/> },
+        {path: "/about", element: <About/> },
+        {path: "/animals", element: <Animals/>},
+        {path: "/birds", element: <Birds/>},
+        {path: "/fishes", element: <Fish/>},
+        {path: "/butterflies", element: <Butterfly/>},
        ],
      },
    ]);
@@ -32,9 +32,18 @@ function App() {
  
   return (
     <>
-     <RouterProvider router={router} />
+     <RouterProvider router={router} >
+     <nav>
+          <Link to="/home">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/animals">Animals</Link>
+          <Link to="/birds">Birds</Link>
+          <Link to="/fishes">Fish</Link>
+          <Link to="/butterflies">Butterflies</Link>
+        </nav>
+      </RouterProvider>
    </>
-  )
+  );
 };
 
 export default App;
