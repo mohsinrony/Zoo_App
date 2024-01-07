@@ -12,6 +12,7 @@
 }
 
 .about-content h2 {
+  margin-bottom: 20px;
   font-size: 1.5em;
   color: #333;
 }
@@ -24,16 +25,11 @@
 
 .about-features {
   margin-top: 30px;
-}
-
-.about-features h3 {
-  font-size: 1.5em;
-  color: #333;
+  font-size: 1.2em;
 }
 
 .about-features ul {
   margin-left: 20px;
-  padding: 0;
   color: #555;
 }
 
@@ -42,4 +38,12 @@
 }
 .learning {
   margin-top: 30px;
+}
+.learning p{
+  margin-bottom: 20px;
+}
+.learning h3{
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
 }
