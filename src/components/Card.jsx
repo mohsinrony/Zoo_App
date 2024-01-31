@@ -1,53 +1,35 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 
-const Card = (props, removeCard) => {
-  const [likes, setLikes] = useState(0);
+const Card = ({itemName, itemLikes, onCardRemove, onCardAddLike, onCardRemoveLike, itemCategory}) => {
 
-  const imgUrl = `https://source.unsplash.com/400x400/?${props.name}`;
+
+  const imgUrl = `https://source.unsplash.com/400x400/?${itemName},${itemCategory}`;
   
-  const handleRemoveClick = () => {
-    removeCard(props.name);
-  };
 
-  const handleIncrementLikes = () => {
-    setLikes(likes+1);
-  };
-  const handleDecrementLikes = () => {
-    if (likes >= 0) {
-      setLikes(likes-1);
-    }
-    else if (likes < 0)
-    setLikes(likes-1);
-  };
   return (
-    <div className="cards">
-    <div className="card">
-       <button className='removeButton' onClick= {handleRemoveClick}><span className="material-symbols-outlined cancel-icon">
-cancel
-</span></button>
-      <img src={imgUrl} alt={props.name} />
-      <h2>{props.name}</h2>
-     
-      <button onClick={handleDecrementLikes}><span className="material-symbols-outlined dislike">
-heart_minus
-</span></button>
-
-{likes >= 0 ? (
-          <span className="score" class="material-symbols-outlined">favorite {likes}</span>
-        ) : (
-          <span class="material-symbols-outlined broken-heart">heart_broken
-{likes}
-</span>
-        )}
-      
-{/* likes_count = props.likes + conditional likes icon*/}
-      <button onClick={handleIncrementLikes}><span className="material-symbols-outlined like">
-heart_plus
-</span></button> 
-    </div>
-    </div>
-  )
-};
+      <div className="cards">
+        <div className='removeButton'>
+          <button  onClick= {onCardRemove}><span className="material-symbols-outlined cancel-icon">cancel</span></button>
+        </div>
+        <img src={imgUrl} alt= "random-pic"/>
+        <div className="card-info">
+          <h2 className='item-name'>{itemName}</h2>
+          <div className='middle-row'>
+            <button className="minus-button" onClick={onCardRemoveLike}><span className="material-symbols-outlined dislike"> heart_minus </span></button>
+            <div className="score">
+              <span className="material-symbols-outlined">{itemLikes >= 0 ? 'favorite' : 'heart_broken'}</span>
+              <p>{itemLikes}</p>
+              </div>
+              <button className="plus-button" onClick={onCardAddLike}><span className="material-symbols-outlined like">heart_plus</span></button>
+          </div>
+        </div>
+              <div className="see-more">
+                <Link to={`/details/${itemName.toLowerCase()}`}>SEE MORE</Link>
+              </div>
+      </div>
+                );
+              };
 
   
   export default Card;

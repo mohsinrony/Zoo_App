@@ -1,4 +1,9 @@
 #root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
@@ -21,6 +26,11 @@ main {
 body {
   color: rgba(255, 255, 255, 0.899);
 }
+.cardDiv .info {
+  display: inline-grid;
+  justify-content: center;
+  align-items: center;
+}
 
 .card {
   border: 1px solid white;
@@ -40,7 +50,7 @@ body {
   width:100%;
 }
 
-.cards {
+.cardsContainer {
   display: inline-grid;
   grid-auto-columns: 300px; /* I was having problems, arranging the cards,grid-auto-columns solved my problem */
  gap: 2rem;
@@ -50,7 +60,7 @@ body {
 .footer {
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   position: absolute;
   bottom: 0;
   width: 100%;
