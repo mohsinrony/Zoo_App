@@ -28,8 +28,8 @@ const Card = ({itemName, itemLikes, onCardRemove, onCardAddLike, onCardRemoveLik
                 <Link to={`/details/${itemName.toLowerCase()}`}>SEE MORE</Link>
               </div>
       </div>
-                );
-              };
+            );
+          };
 
   
   export default Card;
