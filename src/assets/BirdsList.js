@@ -1,4 +1,4 @@
-export const birds = [
+const birds = [
   { "name": "Sparrow", "likes": 0 },
   { "name": "Starling", "likes": 0 },
   { "name": "Pigeon", "likes": 0 },
@@ -41,3 +41,6 @@ export const birds = [
   { "name": "Cormorant", "likes": 0 },
   { "name": "Hawk", "likes": 0 }
 ];
+
+export {birds};
+export default birds;

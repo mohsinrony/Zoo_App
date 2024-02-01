@@ -1,53 +1,91 @@
 import React, { useState } from "react";
-import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
-import Home from "./routes/Home.jsx";
-import About from "./routes/About.jsx";
-import Animals from "./routes/Animals.jsx";
-import Birds from "./routes/Birds.jsx";
-import Fish from "./routes/Fish.jsx";
-import Butterfly from "./routes/Butterfly.jsx"; 
-import Root from "./routes/Root.jsx";
-import './styles/App.css'
-
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./routes/Root";
+import animals from "./assets/AnimalList";
+import birds from "./assets/BirdsList";
+import fishes from "./assets/FishList";
+import butterflies from "./assets/ButterflyList";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import CategoryPage from "./routes/CategoryPage";
+import SinglePage from "./routes/SinglePage";
+import ErrorPage from "./routes/ErrorPage";
 
 function App() {
+  const [search, setSearch] = useState("");
+  const [zoo, setZoo] = useState({
+    animals: animals,
+    birds: birds,
+    fishes: fishes,
+    butterflies: butterflies,
+  });
+
+  function removeHandler (name, category) {
+
+    const newZoo = zoo[category].filter((item) => item.name !== name);
+    setZoo({ ...zoo, [category]: newZoo });
+  };
+
+  function likesHandler (name, category, action)  {
+    const newZoo = zoo[category].map((item) => {
+      if (item.name === name) {
+        return {
+          ...item,
+          likes: action === "add" ? item.likes + 1 : item.likes - 1,
+        };
+      }
+      return item;
+    });
+
+    setZoo({ ...zoo, [category]: newZoo });
+  };
+
+  const searchHandler = (e) => {  
+    setSearch(e.target.value);
+  }
+    const handleClean = (e) => {
+    setSearch("");
+    e.target.reset();
+  };
+
+
+
   const router = createBrowserRouter([
-   
-     {
-       path: "/",
-       element: 
-       <Root/>,
-      
-       children: [
-        {path: "/", element: <Home/> },
-        {path: "/about", element: <About/> },
-        {path: "/animals", element: <Animals/>},
-        {path: "/birds", element: <Birds/>},
-        {path: "/fishes", element: <Fish/>},
-        {path: "/butterflies", element: <Butterfly/>},
-       ],
-     },
-   ]);
+    {
+      path: "/",
+      element: <Root handleSearch={searchHandler} handleClean={handleClean} />,
+      errorElement: <ErrorPage />,
+      children: [
+        { path: "/", element: <Home /> },
+        {
+          path: ":category",
+          element: (
+            <CategoryPage
+              zoo={zoo}
+              onRemoveCard={removeHandler}
+              addLike={likesHandler}
+              removeLikes={likesHandler}
+              search={search}
+              setSearch={setSearch}
+            />
+          ),
+        },
+        {
+         path: ":category/:name",
+          element: <SinglePage zoo={zoo} />
+        },
+        { path: "/about", element: <About /> },
+      ],
+    },
+  ]);
 
  
-  return (
-    <>
-     <RouterProvider router={router} >
-     <nav>
-          <Link to="/home">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/animals">Animals</Link>
-          <Link to="/birds">Birds</Link>
-          <Link to="/fishes">Fish</Link>
-          <Link to="/butterflies">Butterflies</Link>
-        </nav>
-      </RouterProvider>
-   </>
-  );
-};
+
+  return <RouterProvider router={router} />;
+}
 
 export default App;
+
 
 /* When youclick the Card, you have to know which animal was clicked and put lights on the clicked card, the function goes through the animal animallist and use setAnimals, spread operator, loop ; add onClick {addEvent and removeEvent}
 onRermove = {() = removeHandler(animal.name)}

@@ -5,55 +5,215 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #f6f3f3;
-
+  background-image: url("../assets/background.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-width:100vh;
-  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+input {
+  margin-top: 20px;
+  margin-bottom: -10px;
+  background-color: lightslategray;
+  border: 1px solid #324b75d5;
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  font-size: 20px;
+  width: 300px;
+}
+input::placeholder {
+  color: #f9f8f8;
+}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.category-page {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.cards {
+  border-radius: 8px;
+  min-width: 240px;
+  background-color: white;
+  position: relative;
+  box-shadow: 2px 2px 2px #324b7553;
+  text-transform: capitalize;
+}
+.item-name {
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+}
+.middle-row {
+  padding: 8px;
+  display: flex;
+  justify-content: space-around;
+}
+.removeButton button{
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(50, 75, 117, 0);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.15s;
+}
+.cards .dislike-button,
+.cards .like-button {
+  border: none;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.1s;
+}
+
+.cards .dislike-button {
+  background-color: darkred;
+}
+.cards .like-button {
+  background-color: darkgreen;
+}
+
+.cards .removeButton button:hover,
+.cards .dislike-button:hover,
+.cards .like-button:hover {
+  background-color: #a1dfdc;
+  cursor: pointer;
+}
+.cards .dislike-button:active {
+  transform: translateY(5px);
+}
+.cards .like-button:active {
+  transform: translateY(-5px);
+}
+.score{
+  text-align: center;
+  color:#333;
+}
+.cards img {
+  border-radius: 5px 5px 0 0;
+  height: 260px;
+  object-fit: cover;
+}
+
+
+
+.cards .score .material-symbols-outlined {
+  color: rgb(16, 139, 0);
+}
+
+.see-more {
+  height: 30px;
+  margin-top: 10px;
+  padding: 6px 0;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: bold;
+  background-color:#a1dfdc;
+  text-align: center;
+  transition: all ease 0.1s;
+}
+
+.see-more:hover {
+  background-color: rgba(197, 206, 139, 0.7);
+  cursor: pointer;
+}
+
+.single-page {
+  background-color: rgba(255, 255, 255, 0.1);
+  min-height: calc(100vh - 98px);
+}
+.single-page-content{
+  margin: 0 auto;
+  padding: 100px 0;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.single-page-content img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #324b7553;
+}
+
+.single-page-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: #333;
+  height: 350px;
+  width: 350px;
+}
+.single-page-info h2 {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 32px;
+  text-transform: capitalize;
+}
+.single-page-info .score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-page-info .score{
+  position: relative;
+  padding-bottom: 60px;
+}
+.single-page-info .score .material-symbols-outlined {
+  color: rgb(16, 139, 0);
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

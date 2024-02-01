@@ -1,4 +1,4 @@
-export const butterflies = [
+const butterflies = [
   { "name": "Adonis Blue", "likes": 0 },
   { "name": "Brimstone", "likes": 0 },
   { "name": "Clouded Yellow", "likes": 0 },
@@ -78,3 +78,6 @@ export const butterflies = [
   { "name": "Yellow Coster", "likes": 0 },
   { "name": "Zebra Swallowtail", "likes": 0 }
 ];
+
+export {butterflies};
+export default butterflies;

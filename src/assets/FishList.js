@@ -1,4 +1,4 @@
-export const fishes = [
+const fishes = [
   { "name": "Angelfish", "likes": 0 },
   { "name": "Betta", "likes": 0 },
   { "name": "Clownfish", "likes": 0 },
@@ -80,3 +80,6 @@ export const fishes = [
   { "name": "Yellow Perch", "likes": 0 },
   { "name": "Zebra Pleco", "likes": 0 }
 ];
+
+export {fishes};
+export default fishes;
