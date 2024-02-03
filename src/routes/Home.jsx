@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
+import animals from "../assets/animals.jpg";
+import birds from "../assets/birds.jpeg";
+import fish from "../assets/fish.jpeg";
+import butterfly from "../assets/Butterfly.jpeg";
+
 
 const Home = () => {
   return (
@@ -9,16 +14,16 @@ const Home = () => {
         <div className='home-content'>
       
       <Link to="/animals"><h1 className='title'>Animals</h1> 
-        <img src="./src/assets/animals.jpg" alt="Animals Page" />
+        <img src={animals} alt="Animals Page" />
       </Link>
       <Link to="/birds"> <h1 className='title'>Birds</h1>
-        <img src="./src/assets/birds.jpeg" alt="Birds Page" />
+        <img src={birds} alt="Birds Page" />
       </Link>
       <Link to="/fishes"><h1 className='title'>Fishes</h1> 
-        <img src="./src/assets/fish.jpeg" alt="Fishes Page" />
+        <img src={fish} alt="Fishes Page" />
       </Link>
       <Link to="/butterflies" > <h1 className='title'>Butterflies</h1>
-        <img src="./src/assets/Butterfly.jpeg" alt="Butterfly Page" />
+        <img src={butterfly} alt="Butterfly Page" />
       </Link>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import "../styles/Header.css";
+import icon from "../assets/Zoo.png";
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
       <div>
       
       <h1 className='header-title'>
-        <Link to="/"><img src="./src/assets/Zoo.png" alt="zoo" />Zoo</Link></h1>
+        <Link to="/"><img src={icon} alt="zoo" />Zoo</Link></h1>
         
       </div>
       <div className='navigation-bar'>
