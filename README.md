@@ -1,9 +1,16 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # Zoo_App
+
+## Explore the world of animals! This React-based app lets you discover, like, and learn about various creatures in different categories. Dive into the animal kingdom with a dynamic user interface and seamless navigation.
+
+## Live page: 
+              https://zoo-app-react.netlify.app/
+### React
+### React Router
+### Web Development
+### JavaScript
+### Frontend
+### UI/UX
+### Single Page Application (SPA)
+### Animals
+### Category Filtering
+### Responsive Design
