@@ -6,7 +6,7 @@
 
               https://zoo-app-react.netlify.app/
 
-### React, ### React Router, ### Web Development, ### JavaScript, ### Frontend, ### UI/UX, ### Single Page Application (SPA), ### Animals, ### Category Filtering, ### Responsive Design
+### React, React Router, Web Development, JavaScript, Frontend, UI/UX, Single Page Application (SPA), Animals, Category Filtering, Responsive Design
 
 ![Home Page](./src/assets/HomePage.png)
 ![Animals](./src/assets/AnimalsPage.png)
